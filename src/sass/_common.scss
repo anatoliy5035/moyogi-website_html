@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400');
+@import url('https://fonts.googleapis.com/css?family=Philosopher');
+
+$main: #7eab48;
+$second: #615852;
+
+body {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.header, .footer {
+  display: table-row;
+  width: 100%;
+}
+
+.header {
+  height: 120px;
+}
+
+main {
+  display: table-row;
+  width: 100%;
+  height: 100%;
+}
+
+//h1 {
+//  font-family: 'Philosopher', sans-serif;
+//  font-family: 'Open Sans', sans-serif;
+//}
+
+a {
+  text-decoration: none;
+}
+
+
+.button {
+  height: 40px;
+  background-color: $main;
+  border-radius: 50px;
+  padding: 8px 22px;
+  display: inline-block;
+  border: 2px solid transparent;
+  color: #fff;
+  font-family: Philosopher;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 11px;
+  @include tr(all .2s);
+  &:hover, &.is-active {
+    background-color: transparent;
+    color: $second;
+    border: 2px solid $main;
+
+  }
+}
+.tr-button {
+  &.tr-white {
+    border: 2px solid white;
+    color: white;
+    @include tr(all .2 s);
+    &:hover {
+      border: 2px solid $main;
+      color: $main;
+      background-color: transparent;
+    }
+  }
+  height: 40px;
+  color: $second;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 8px 30px;
+  border: 2px solid $main;
+  color: $second;
+  @include tr(all .2 s);
+  &:hover, &.is-active {
+    background-color: $main;
+    color: white;
+    border-color: transparent;
+  }
+}
+
+.button.call-button {
+  height: 41px;
+  border: 1px solid $main;
+  border-radius: 5px;
+  color: $main;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  background-color: transparent;
+  &:hover {
+    background: $main;
+    color: white;
+  }
+}
+
+.wrapper {
+    overflow: hidden;
+    min-width: 320px;
+  }
+
+.h2 {
+  color: $main;
+  font-family: Philosopher;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include r(767) {
+    font-size: 33px;
+  }
+}
+
+.h3 {
+  font-family: Philosopher;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  @include r(767) {
+    font-size: 18px;
+  }
+}
+
+.news-button {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hidden-xs {
+  @include r(767) {
+    display: none !important;
+  }
+
+}
+
+.hidden-sm {
+  @include r(1024) {
+    display: none !important;
+  }
+}
+
+.row-mod-sm {
+  @include r(1024) {
+    width: 212%;
+    margin-left: -109%;
+  }
+  @include r(767) {
+    width: 100%;
+    margin: 0;
+  }
+
+  .col-inline-xs-12 {
+    @include r(767) {
+      padding: 0;
+    }
+  }
+}

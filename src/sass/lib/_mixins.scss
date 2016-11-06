@@ -1,0 +1,262 @@
+
+// less than X
+@mixin r($width) {
+	@media only screen and (max-width: $width+ "px") {
+		@content
+	}
+}
+
+// more than X
+@mixin rm($width) {
+	@media only screen and (min-width: $width+ "px") {
+		@content
+	}
+}
+
+// height, less than X
+@mixin rh($height) {
+	@media only screen and (max-height: $height + "px") {
+		@content
+	}
+}
+
+
+@mixin clr {
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+		*zoom: 1;
+	}
+}
+
+
+@mixin g($color1, $color2) {
+	background-color: $color1;
+	background-image: linear-gradient($color1, $color2);
+}
+
+@mixin gh($color1, $color2) {
+	background-color: $color1;
+	background-image: linear-gradient(to right, $color1, $color2);
+}
+
+// easy vertical-align at center
+@mixin vcenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(- 50%, - 50%);
+}
+
+// bulletproof vertical-align
+@mixin vertical {
+	text-align: center;
+	font-size: 0;
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		width: 0;
+		height: 100%;
+	}
+}
+
+// justify, set on parent
+@mixin justify {
+			text-align: justify;
+			line-height: 0;
+			font-size: 0;
+			zoom: 1;
+			text-align-last: justify;
+			&:after {
+				content: "";
+				display: inline-block;
+				width: 100%;
+				height: 0px;
+				visibility: hidden;
+				overflow: hidden;
+
+			}
+		}
+
+
+// fast font-family
+@mixin font($alias, $name) {
+	@font-face;
+	font-family: $alias;
+	src: url("fonts/" + $name + ".woff2") format("woff2"), url("fonts/" + $name + ".woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+// usage:
+//+font(black, cytiapro-black-webfont)
+
+
+@mixin text-overflow {
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin ie {
+	*display: inline;
+	*zoom: 1;
+}
+
+@mixin box {
+		box-sizing: border-box;
+	}
+
+%pseudo {
+		position: relative;
+		&:before,
+		&:after {
+			content: ' ';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+}
+
+@mixin pseudo {
+	@extend %pseudo;
+}
+
+@mixin coverdiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin circle {
+		border-radius: 50%;
+	}
+@mixin cover {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+@mixin bg-size($width: 100%, $height: 100%) {
+		background-size: $width $height;
+	}
+
+
+// retina, also available as +hdpi
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+		@content
+	}
+}
+
+@mixin tr($what) {
+	transition: $what;
+}
+
+@mixin hide-text {
+	font: 0/0 ;
+	text-shadow: none;
+	color: transparent;
+}
+
+@mixin hidetext {
+	@include hide-text;
+
+}
+
+@mixin unselectable {
+	user-select: none;
+}
+
+@mixin prevent-text {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	//word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+@mixin font-smoothing($val: antialiased) {
+	-webkit-font-smoothing: $val;
+	-moz-font-smoothing: $val;
+	-ms-font-smoothing: $val;
+	-o-font-smoothing: $val;
+}
+
+@mixin gpu {
+	@include transform(translate3d(0, 0, 0));
+}
+
+@mixin smooth-triangle {
+	transform: rotate(0.05deg)
+}
+
+	//triangle
+	//@mixin arr($width, $height, $bg, $direction) {
+	//	width: 0px;
+	//	height: 0px;
+	//	border-style: solid;
+	//	@if $direction @mixin t {
+	//		border-width: 0 $width / 2 + px $height + px $width / 2 + px;
+	//		border-color: transparent transparent $bg transparent;
+	//	}
+	//
+	//	@if $direction @mixin @mixin  r
+	//		border-width: $height / 2 + px 0 $height / 2 + px $width + px
+	//		border-color: transparent transparent transparent $bg
+	//	@if $direction @mixin @mixin  b
+	//		border-width: $height + px $width / 2 + px 0 $width / 2 + px
+	//		border-color: $bg transparent transparent transparent
+	//	@if $direction @mixin @mixin  l
+	//		border-width: $height / 2 + px $width + px $height / 2 + px 0
+	//		border-color: transparent $bg transparent transparent
+	//	@if $direction @mixin @mixin  tl
+	//		border-width: $height + px $width + px 0 0
+	//		border-color: $bg transparent transparent transparent
+	//	@if $direction @mixin @mixin  tr
+	//		border-width: 0 $width + px $height + px 0
+	//		border-color: transparent $bg transparent transparent
+	//	@if $direction @mixin @mixin  br
+	//		border-width: 0 0 $height + px $width + px
+	//		border-color: transparent transparent $bg transparent
+	//	@if $direction @mixin @mixin  bl
+	//		border-width: $height + px 0 0 $width + px
+	//		border-color: transparent transparent transparent $bg
+	// example
+	// +arr(500,50, #000, l)
+	// +arr(500,50, #000, bl)
+
+@mixin rotate($var) {
+	transform: rotate($var+deg);
+}
+
+@mixin blur($var) {
+	-webkit-filter: blur($var);
+	filter: blur($var);
+}
+
+@mixin scale($var) {
+	transform: scale($var);
+}
+
+@mixin counter($var, $sep) {
+	counter-reset: list + $var;
+	> li
+	&:before {
+		content: counter(list + $var) $sep;
+		counter-increment: list + $var;
+	}
+
+}
+
+@mixin fs($sizeValue: 16) {
+	font-size: $sizeValue + px;
+	font-size: $sizeValue / 10 + rem;
+}
+
+@import "media";

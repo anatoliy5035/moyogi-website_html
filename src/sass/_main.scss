@@ -1,0 +1,719 @@
+// Normally mainpage styles
+.basket {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  background: $main;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  a {
+	display: inline-block;
+  }
+  .icon {
+	@include vcenter;
+	color: white;
+	font-size: 22px;
+	@include tr(all .2s);
+	&.is-active, &:hover {
+	  background-color: $main;
+	  .icon {
+
+	  }
+	}
+
+  }
+}
+
+.phone-icon {
+  position: relative;
+  &:before {
+	@include r(767) {
+	  display: none;
+	}
+	font-family: "svgfont";
+	display: inline-block;
+	vertical-align: middle;
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: auto;
+	speak: none;
+	min-width: 1em;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	content: "\EA02";
+	color: $main;
+	font-size: 24px;
+	position: absolute;
+	left: 20px;
+	top: 0;
+
+  }
+}
+
+.phone-link {
+  font-family: Philosopher;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $second;
+}
+
+.shedule span {
+  color: #b2b2b2;
+  font-family: Philosopher;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.header {
+  padding: 24px 0;
+}
+
+.header-logo {
+  text-align: center;
+  @include r(767) {
+	margin: 15px 0;
+  }
+
+
+}
+
+.header-contacts-block {
+	@include r(767) {
+	  text-align: center;
+	  margin: 10px 0;
+	}
+}
+
+
+
+
+.phone,
+.shedule {
+  padding-left: 56px;
+
+  @include r(767) {
+	padding: 0 !important;
+  }
+}
+
+.nav-menu {
+  li {
+	display: inline-block;
+  }
+  padding: 10px 0;
+  background-image: url('../img/head.png');
+  ul {
+	@include justify;
+  }
+}
+
+.nav-link {
+  color: #fff;
+  font-family: Philosopher;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  &:before {
+	content: '•';
+	color: $main;
+	font-size: 14px;
+	position: absolute;
+	right: -26%;
+  }
+}
+
+.banner {
+  height: 560px;
+  display: table;
+  background: url(../img/paralax.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  @include r(767) {
+	padding: 0 20px;
+  }
+}
+
+.banner-title {
+  color: #fff;
+  font-family: Philosopher;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 678px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  @include r(767) {
+	font-size: 33px;
+  }
+}
+
+.banner-text {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+
+
+.banner-buttons {
+  .button:first-child {
+	margin-right: 25px;
+	@include r(767) {
+	  margin-bottom: 15px;
+	}
+  }
+}
+
+
+
+.nav-to-page {
+  width: 50px;
+  height: 50px;
+  opacity: 0.6;
+  display: block;
+  background-image: url('../img/but-go.png');
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all .2s;
+  &:hover {
+	opacity: 1;
+  }
+}
+
+.why-we {
+  padding: 70px 0;
+  background-color: #f2f2f2;
+  background-image: url(../img/bg-3.png);
+  background-position: 43% 18%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include r(767) {
+	padding: 35px 0;
+  }
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 70px;
+  &:after {
+	background-image: url(../img/china.png);
+	content: '';
+	display: block;
+	width: 278px;
+	height: 23px;
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+  }
+
+}
+
+.item-benefit-logo {
+  width: 70px;
+  height: 70px;
+  background-color: #dfe9d4;
+  border-radius: 50%;
+  position: relative;
+  @include r(922) {
+	position: relative !important;
+	margin: 0 auto;
+  }
+
+  .benefit-ico {
+	@include vcenter
+  }
+}
+
+.item-benefit {
+  position: relative;
+  @include r(922) {
+	text-align: center;
+  }
+
+}
+
+.item-benefit-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.benefit-ico {
+  width: 44px;
+  height: 30px;
+  display: block;
+}
+
+.benefit-button {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.item-benefit-text {
+  margin-bottom: 100px;
+  @include r(922) {
+	margin-bottom: 20px;
+  }
+  .one {
+	padding-left: 95px;
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 24px;
+	display: block;
+	padding-top: 18px;
+	@include r(767) {
+	  padding-top: 8px;
+	}
+  }
+
+  .one span {
+	color: $main;
+  }
+
+}
+
+.benefit-1 {
+  @include s(benefit-1)
+}
+
+.benefit-2 {
+  @include s(benefit-2)
+}
+.benefit-3 {
+  @include s(benefit-3)
+}
+.benefit-4 {
+  @include s(benefit-4)
+}
+.benefit-5 {
+  @include s(benefit-5)
+}
+.benefit-6 {
+  @include s(benefit-6)
+}
+
+.items-benefit-right {
+  .item-benefit-logo {
+	right: 0;
+	left: auto;
+  }
+  .one {
+	padding-left: 0;
+  }
+}
+
+.our-menu {
+  padding: 70px 0;
+  background-image: url(../img/bg-2.png);
+  @include r(767) {
+	padding: 35px 0;
+  }
+}
+
+.our-menu .col-inline-xs-12 {
+  @include r(1024) {
+	vertical-align: top;
+  }
+
+}
+
+.benefit-sushi-picture {
+  @include r(922) {
+	display: none;
+  }
+  img {
+	width: 100%;
+  }
+}
+
+.conainer-why {
+  margin: 0 auto;
+
+}
+
+.menu-item-block-1 {
+
+}
+
+.our-menu-item {
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+  @include r(767) {
+	height: 200px;
+	width: 100%;
+  }
+  img {
+	background-color: black;
+	display: block;
+	border-radius: 10px;
+	width: 100%;
+  }
+  &:hover {
+	img {
+	  transform: scale(1.2);
+	  width: 100%;
+	  -webkit-transition: -webkit-transform 1.2s ease-out;
+	  transition: -webkit-transform 1.2s ease-out;
+	  transition: transform 1.2s ease-out;
+	  transition: transform 1.2s ease-out, -webkit-transform 1.2s ease-out;
+	}
+	}
+  }
+
+
+.menu-name {
+  @include vcenter;
+  color: #fff;
+  font-family: Philosopher;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  @include r(767) {
+	font-size: 24px;
+  }
+}
+
+
+
+.cells-our-menu-right img {
+  background-color: black;
+}
+
+.news {
+  background-color: #363935;
+  .h2 {
+	color: white;
+  }
+  @include r(767) {
+	padding: 35px 0 !important;
+  }
+}
+
+.news-item {
+  height: 230px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+
+  .date {
+	color: #8b8b8b;
+	font-family: "Open Sans";
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 24px;
+  }
+
+  article p {
+	color: #333;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+  }
+
+  .more-link {
+	color: $main;
+	font-family: "Open Sans Light";
+	font-size: 14px;
+	font-style: italic;
+	line-height: 24px;
+	text-decoration: underline;
+	position: absolute;
+	bottom: 29px;
+	transition: all .2s;
+	&:hover {
+	  text-decoration: none;
+	}
+  }
+}
+
+
+.news-item .h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.news {
+  padding: 80px 0 50px 0;
+  background-image: url("../img/bg-1.svg");
+}
+
+.map-section {
+  height: 522px;
+  position: relative;
+  @include r(767) {
+	height: auto;
+  }
+}
+
+#map {
+  height: 100%;
+}
+
+.map-info {
+  position: absolute;
+  max-width: 270px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+  z-index: 800;
+  text-align: center;
+  padding: 36px;
+  padding-bottom: 150px;
+  top: 54px;
+  @include r(767) {
+	max-width: auto;
+	max-width: initial;
+	position: relative;
+	border-radius: 0;
+	left: auto;
+	top: auto;
+	box-shadow: none;
+  }
+
+  .h3 {
+	color: $main;
+	margin-bottom: 16px;
+  }
+}
+
+.map-info-text {
+  color: #333;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.map-ico {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  @include s(placeholder);
+  margin-bottom: 15px;
+}
+
+.call-ico {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  @include s(phone-call-2);
+  margin-bottom: 16px;
+}
+
+.map-info-but {
+  margin-bottom: 15px;
+}
+
+.map-tel {
+  margin-bottom: 15px;
+  color: #333;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.footer-map-info {
+  background-color: #f3f3f3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 15px;
+  text-align: center;
+  @include r(767) {
+	background-color: transparent;
+  }
+}
+
+#map {
+  @include r(767) {
+	height: 270px !important;
+  }
+}
+
+.footer {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  height: 300px;
+}
+
+.footer .row-inline {
+  vertical-align: middle;
+}
+
+.basket {
+  margin-left: 30px;
+}
+
+.header .button {
+  margin-left: 20px;
+}
+
+.buttons .button,
+.buttons .basket {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.buttons {
+  margin: 15px 0;
+}
+
+.menu-list {
+  @include r(767) {
+	display: none;
+  }
+}
+
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #ffffff;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+.footer {
+  background-color: #363935;
+  color: #aaa;
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.footer-menu-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: underline;
+  color: #aaa;
+
+}
+
+.footer-contacts {
+  text-align: right;
+  @include r(767) {
+	margin-bottom: 20px;
+  }
+}
+
+.soc-link {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.logo-footer {
+  margin-bottom: 20px;
+  @include r(767) {
+	margin-top: 15px;
+	text-align: center;
+  }
+}
+
+.vk {
+  @include s(vk)
+}
+
+.fb {
+  @include s(fb)
+}
+
+.in {
+  @include s(in)
+}
+
+.footer-soc li {
+  display: inline-block;
+}
+
+.footer-tel {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 15px;
+  @include r(767) {
+	font-size: 20px;
+  }
+}
+
+.footer-bottom {
+  @include r(767) {
+	font-size: 12px;
+  }
+}
+
+.footer-call {
+  color: #aaa;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.footer-soc {
+  margin-bottom: 15px;
+}
+
+.container-row-table {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.copy {
+  @include r(767) {
+	display: none;
+  }
+}
+
+.footer .middle {
+  vertical-align: top;
+}

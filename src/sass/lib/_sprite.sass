@@ -1,0 +1,114 @@
+$icons: (0:0)
+$icons: map-merge($icons,(benefit-1: (X: -44px, Y:-44px, W: 44px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(benefit-2: (X: 0px, Y:-44px, W: 40px, H: 35px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(benefit-3: (X: 0px, Y:-83px, W: 43px, H: 24px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(benefit-4: (X: -50px, Y:0px, W: 49px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(benefit-5: (X: 0px, Y:0px, W: 46px, H: 40px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(benefit-6: (X: -103px, Y:0px, W: 32px, H: 43px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(fb: (X: -103px, Y:-47px, W: 30px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(in: (X: -139px, Y:0px, W: 30px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(phone-call-2: (X: -139px, Y:-34px, W: 30px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(placeholder: (X: -139px, Y:-68px, W: 30px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(vk: (X: 0px, Y:-111px, W: 30px, H: 30px, TW: 169px, TH: 141px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
+
+//
+//.icon-benefit-1
+//	width: 44px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -44px -44px
+//
+//.icon-benefit-2
+//	width: 40px
+//	height: 35px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -44px
+//
+//.icon-benefit-3
+//	width: 43px
+//	height: 24px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -83px
+//
+//.icon-benefit-4
+//	width: 49px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -50px 0px
+//
+//.icon-benefit-5
+//	width: 46px
+//	height: 40px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
+//.icon-benefit-6
+//	width: 32px
+//	height: 43px
+//	background-image: url('../img/icons.png')
+//	background-position: -103px 0px
+//
+//.icon-fb
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -103px -47px
+//
+//.icon-in
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -139px 0px
+//
+//.icon-phone-call-2
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -139px -34px
+//
+//.icon-placeholder
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -139px -68px
+//
+//.icon-vk
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -111px
+//
