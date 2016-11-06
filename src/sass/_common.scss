@@ -5,10 +5,18 @@ $main: #7eab48;
 $second: #615852;
 
 body {
+  width: 100%;
+  height: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+
+.wrapper {
+  overflow-x: hidden;
   display: table;
   table-layout: fixed;
   width: 100%;
-  height: 100%;
 }
 
 .header, .footer {

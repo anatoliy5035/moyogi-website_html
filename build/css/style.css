@@ -1118,10 +1118,17 @@ html {
 }
 
 body {
+  width: 100%;
+  height: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.wrapper {
+  overflow-x: hidden;
   display: table;
   table-layout: fixed;
   width: 100%;
-  height: 100%;
 }
 
 .header, .footer {
@@ -1397,10 +1404,15 @@ a {
   display: inline-block;
 }
 
+@media only screen and (max-width: 1024px) {
+  .nav-menu li {
+    margin-right: 30px;
+  }
+}
+
 .nav-menu ul {
   text-align: justify;
   line-height: 0;
-  font-size: 0;
   zoom: 1;
   -moz-text-align-last: justify;
        text-align-last: justify;
@@ -1413,6 +1425,12 @@ a {
   height: 0px;
   visibility: hidden;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-menu ul {
+    text-align: center;
+  }
 }
 
 .nav-link {
@@ -1537,6 +1555,10 @@ a {
           transform: translateX(-50%);
 }
 
+.conainer-why .middle {
+  vertical-align: top;
+}
+
 .item-benefit-logo {
   width: 70px;
   height: 70px;
@@ -1545,7 +1567,7 @@ a {
   position: relative;
 }
 
-@media only screen and (max-width: 922px) {
+@media only screen and (max-width: 1024px) {
   .item-benefit-logo {
     position: relative !important;
     margin: 0 auto;
@@ -1565,9 +1587,10 @@ a {
   position: relative;
 }
 
-@media only screen and (max-width: 922px) {
+@media only screen and (max-width: 1024px) {
   .item-benefit {
     text-align: center;
+    height: 180px;
   }
 }
 
@@ -1951,10 +1974,36 @@ a {
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .header .tr-button {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header .tr-button {
+    margin-bottom: 0;
+  }
+}
+
 .buttons .button,
 .buttons .basket {
   display: inline-block;
   vertical-align: middle;
+}
+
+@media only screen and (max-width: 1200px) {
+  .buttons .button,
+  .buttons .basket {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .buttons .button,
+  .buttons .basket {
+    margin-left: 0;
+  }
 }
 
 .buttons {
@@ -1962,7 +2011,19 @@ a {
 }
 
 @media only screen and (max-width: 767px) {
+  .buttons {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
   .menu-list {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobi-hamburger {
     display: none;
   }
 }
